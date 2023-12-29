@@ -1,0 +1,80 @@
+/*
+  This sketch uses the DHCP extensions to the Ethernet library
+  to get an IP address via DHCP and print the address obtained.
+  using an Arduino Nano
+*/
+
+#include <SPI.h>
+//#include <Ethernet.h> // Ethernet library for Arduino shields
+//#include <EthernetICMP.h> // for PING but does not work with UIPEthernet
+#include <UIPEthernet.h> // UIPEthernet library is used for Arduino Nano Ethernet Shield
+#include <LiquidCrystal_I2C.h>
+
+
+LiquidCrystal_I2C lcd(0x27, 16, 2); // I2C address 0x27, 16 column and 2 rows
+
+// Enter a MAC address for your controller below.
+// Newer Ethernet shields have a MAC address printed on a sticker on the shield
+byte mac[] = { 0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x02 };
+IPAddress pingAddr(10,165,135,153); // ip address to ping
+
+void setup() {
+
+lcd.init(); // initialize the lcd
+lcd.backlight();
+
+// start the Ethernet connection:
+lcd.clear();
+lcd.setCursor(0,0);
+lcd.print("Initialising");
+
+if (Ethernet.begin(mac) == 0) {  
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Fail DHCP config");
+
+  if (Ethernet.linkStatus() == LinkOFF) {
+    lcd.setCursor(0,1);
+    lcd.print("Cable not connected");
+  }
+  delay(60000);
+}
+
+  // print your local IP address:
+  lcd.clear();                 // clear display
+  lcd.setCursor(0, 0);         // move cursor to   (0, 0)
+  lcd.print("");
+  lcd.print(Ethernet.localIP());
+  lcd.setCursor(0,1);
+  lcd.print("#");
+  lcd.print(Ethernet.subnetMask());
+  delay(1000);
+}
+
+void loop() {
+  lcd.clear();                 // clear display
+  lcd.setCursor(0, 0);         // move cursor to   (0, 0)
+  lcd.print("I");
+  lcd.print(Ethernet.localIP());
+  lcd.setCursor(0,1);
+  lcd.print("#");
+  lcd.print(Ethernet.subnetMask());
+  delay(3000);
+  
+  lcd.clear();                 // clear display
+  lcd.setCursor(0, 0);         // move cursor to   (0, 0)
+  lcd.print("G");
+  lcd.print(Ethernet.gatewayIP());
+  lcd.setCursor(0,1);
+  lcd.print("D");
+  lcd.print(Ethernet.dnsServerIP());
+  delay(3000);
+
+  lcd.clear();
+  lcd.setCursor(0,0);
+  if (Ethernet.linkStatus() == LinkON) {
+    lcd.setCursor(0,1);
+    lcd.print("Cable connected");
+  }
+  delay(3000);
+}
