@@ -1,5 +1,7 @@
 Network tester – Arduino
-
+The idea of this project was to make a very small network tester that would check that the port is patched (ie live),
+where this can be assertained by looking at the LEDs on the NIC on the Ethernet Shield. The code sets up the shield
+for DHCP and will display the network details if it connects.
 
 These are the following parts
 a)	Farnell case MULTICOMP PRO MCG1910 Plastic Enclosure, Multipurpose, ABS, 32 mm, 115 mm, 83 mm
@@ -13,3 +15,4 @@ h)	8 mm wood drill bit
 i)	16 mm drill bit
 j)	20 mm drill bit
 k)	Needle files
+j)  The Arduino code that is part of this project
