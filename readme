@@ -1,4 +1,4 @@
-__Network tester – Arduino__
+# Network tester – Arduino
 The idea of this project was to make a very small network tester that would check that the port is patched (ie live),
 where this can be assertained by looking at the LEDs on the NIC on the Ethernet Shield. The code sets up the shield
 for DHCP and will display the network details if it connects.
