@@ -28,3 +28,8 @@ j) 20 mm drill bit
 k) Needle files
 
 j) The Arduino code that is part of this project
+
+# Images 
+
+![Completed network tester](https://github.com/albank1/Arduino-Network-Tester/blob/main/Network%20tester%20complete.jpg)
+![Completed network tester](https://github.com/albank1/Arduino-Network-Tester/blob/main/Network%20tester%20complete.jpg)
