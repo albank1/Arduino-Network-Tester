@@ -32,4 +32,6 @@ j) The Arduino code that is part of this project
 # Images 
 
 ![Completed network tester](https://github.com/albank1/Arduino-Network-Tester/blob/main/Network%20tester%20complete.jpg)
-![Completed network tester](https://github.com/albank1/Arduino-Network-Tester/blob/main/Network%20tester%20complete.jpg)
+![Network tester layout](https://github.com/albank1/Arduino-Network-Tester/blob/main/Network%20tester%20layout%201.jpg)
+![Network tester layout](https://github.com/albank1/Arduino-Network-Tester/blob/main/Network%20tester%20layout%202.jpg)
+![Network tester layout](https://github.com/albank1/Arduino-Network-Tester/blob/main/Network%20tester%20layout%203.jpg)
